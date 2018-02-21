@@ -1,0 +1,26 @@
+{
+  "name": "hashtag-metadata-proxy",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "npm run ganache-cli:dev && truffle test --network rpc",
+    "test:gas": "GAS_REPORTER=true npm test",
+    "lint": "solium --dir ./contracts",
+    "coverage": "node_modules/.bin/solidity-coverage",
+    "ganache-cli:dev": "scripts/ganache-cli.sh",
+    "migrate:dev": "npm run ganache-cli:dev && npm run migrate:dev:contracts",
+    "migrate:dev:contracts": "truffle migrate --all --network rpc;"
+  },
+  "keywords": [],
+  "author": "Eduardo Antuña Díez (eduadiez)",
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eth-gas-reporter": "^0.1.1",
+    "ganache-cli": "^6.0.3",
+    "solidity-coverage": "^0.4.9",
+    "solium": "^1.1.5",
+    "truffle": "^4.0.6"
+  }
+}
