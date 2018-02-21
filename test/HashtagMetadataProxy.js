@@ -1,8 +1,9 @@
 const { assertRevert } = require('./helpers/assertThrow')
-
 const getContract = name => artifacts.require(name)
 
+
 contract('HashtagMetadataProxy', (accounts) => {
+    const TTL = 3600;
     let HashtagMetadataProxy
 
     before(async () => {
@@ -10,8 +11,7 @@ contract('HashtagMetadataProxy', (accounts) => {
     })
 
     it('Should change de TTL value', async () => {
-        assert.equal(await HashtagMetadataProxy.defaultTTL.call(),0,"Should have TTL=0 initially")
-        await HashtagMetadataProxy.setTTL(3600)
-        assert.equal(await HashtagMetadataProxy.defaultTTL.call(),3600,"Should have TTL=0 initially")
+        await HashtagMetadataProxy.setTTL(TTL)
+        assert.equal(await HashtagMetadataProxy.defaultTTL.call(),TTL,"Should have changed the TTL value")
     })
 })
