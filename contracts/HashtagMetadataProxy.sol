@@ -19,7 +19,7 @@ contract HashtagMetadataProxy is IPFSEvents,Ownable {
         hashtags[_name] = _ipfsValue;
     }
     
-    function generateIPFSEvent(string _name, string _ipfsValue) internal {
+    function generateIPFSEvent(string _name, string _ipfsValue) onlyOwner internal {
         if (bytes(_ipfsValue).length == 0) {
             HashRemoved(this, getHashtagMetadata(_name));
         }else {
