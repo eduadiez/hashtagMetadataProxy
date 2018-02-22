@@ -2,7 +2,7 @@ const mochaGasSettings = {
   reporter: 'eth-gas-reporter',
   reporterOptions : {
     currency: 'USD',
-    gasPrice: 21
+    gasPrice: 20
   }
 }
 
