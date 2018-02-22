@@ -8,7 +8,7 @@ contract HashtagProxy is IPFSEvents,Ownable {
     mapping (string => string) hashtags;
     uint public defaultTTL;
     
-    event HashtagSet(string name, string value);
+    event HashtagSet(string hashtagName, string ipfsHash);
 
     function setHashtag(string _name, string _ipfsValue) onlyOwner external {
         require(bytes(_name).length != 0);

@@ -88,8 +88,8 @@ contract('HashtagProxy', (accounts) => {
         assert.equal(result.logs[0].args.hashAdded, IPFSHASH);
 
         assert.equal(result.logs[1].event, "HashtagSet");
-        assert.equal(result.logs[1].args.name, HASHTAGNAME);
-        assert.equal(result.logs[1].args.value, IPFSHASH);
+        assert.equal(result.logs[1].args.hashtagName, HASHTAGNAME);
+        assert.equal(result.logs[1].args.ipfsHash, IPFSHASH);
 
     })
 
@@ -109,8 +109,8 @@ contract('HashtagProxy', (accounts) => {
         assert.equal(result.logs[1].args.hashAdded, OTHERIPFSHASH);
 
         assert.equal(result.logs[2].event, "HashtagSet");
-        assert.equal(result.logs[2].args.name, HASHTAGNAME);
-        assert.equal(result.logs[2].args.value, OTHERIPFSHASH);
+        assert.equal(result.logs[2].args.hashtagName, HASHTAGNAME);
+        assert.equal(result.logs[2].args.ipfsHash, OTHERIPFSHASH);
 
     })
 
@@ -127,8 +127,7 @@ contract('HashtagProxy', (accounts) => {
         assert.equal(result.logs[0].args.hashRemoved, previousHash);
 
         assert.equal(result.logs[1].event, "HashtagSet");
-        assert.equal(result.logs[1].args.name, HASHTAGNAME);
-        assert.equal(result.logs[1].args.value, "");
-
+        assert.equal(result.logs[1].args.hashtagName, HASHTAGNAME);
+        assert.equal(result.logs[1].args.ipfsHash, "");
     })
 })
