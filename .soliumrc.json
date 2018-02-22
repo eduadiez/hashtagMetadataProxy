@@ -10,7 +10,7 @@
         "array-declarations": 1,
         "operator-whitespace": 1,
         "lbrace": 1,
-        "mixedcase": 0,
+        "mixedcase": 1,
         "camelcase": 1,
         "uppercase": 1,
         "no-empty-blocks": 1,
